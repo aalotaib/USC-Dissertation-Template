@@ -38,6 +38,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %$% $Log: USCthesis.sty,v $
 %$%
+%$% Revision 1.4.2  2024/06/20 Amer Melebari
+%$%     Enforcing all caps for title and major on the Title page
+%$%     Replaced acronym package with acro package, added list of abbreviations
 %$% Revision 1.4.1  2022/06/16 00:00:00  Calvin Ardi
 %$%   ToC: chapter titles and page numbers are now medium-weight instead
 %$%     of bold--USC style guidelines state that page numbers are always
@@ -858,7 +861,7 @@
     % Added by Marcos
     \begin{doublespace}
     %\doublespacing
-      {\@title \par}%         Set title the same size as "FACULTY OF ..."
+      {\Large \MakeUppercase{\@title} \par}%         Set title the same size as "FACULTY OF ..."
       \ifx\@volume\@empty\else
         \vskip 0.16 true in
         \@volume
@@ -893,7 +896,7 @@
         \@doctorsdegree
       \fi\\%*[0.1 true in]%
       \ifshowmajorfield
-        (\@majorfield)%
+        (\MakeUppercase{\@majorfield})%
       \fi\\%*[1.0 true cm]%
       %\vfill
       \vskip 0.75 true in

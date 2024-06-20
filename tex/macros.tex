@@ -29,13 +29,13 @@
 % \newfloat{program}{h}{eqn}
 
 % \newcommand{\javafile}[2]{
-% \begin{Program}
-% \lstinputlisting[]{code/#1.java}
-% \vspace{-12pt}
-% \caption{#2}
-% \label{prg:#1}
-% \end{Program}
-% }
+	% \begin{Program}
+		% \lstinputlisting[]{code/#1.java}
+		% \vspace{-12pt}
+		% \caption{#2}
+		% \label{prg:#1}
+		% \end{Program}
+	% }
 
 %stuff for listings package
 
@@ -58,33 +58,21 @@
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \lstset{frame=tb,
-  language=Java,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  numbers=left,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3
-  }
-
-
-\crefname{figure}{Figure}{Figures}
-\crefname{component}{Component}{Components}
-\crefname{algocf}{Algorithm}{Algorithms}
-
-
-\newcommand{\letterbomb}{\textsc{LetterBomb}\xspace}
-\newcommand{\covert}{\textsc{COVERT}\xspace}
-\newcommand{\sealant}{\textsc{SEALANT}\xspace}
-\newcommand{\tofu}{TOFU\xspace}
-\newcommand{\iccgraph}{ICC Graph\xspace}
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
 
 % \algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}%
 % \newcommand{\algIndent}{\hspace{\algorithmicindent}}
@@ -106,170 +94,32 @@
 
 
 % Highlighting
-\newcommand{\reducedstrut}{\vrule width 0pt height \ht\strutbox depth \dp\strutbox\relax}
+% \newcommand{\reducedstrut}{\vrule width 0pt height \ht\strutbox depth \dp\strutbox\relax}
 
-\newcommand{\highlight}[1]{%
-  \begingroup
-  \setlength{\fboxsep}{0pt}%
-  \colorbox{blue!20}{\reducedstrut#1\/}%
-  \endgroup
-}
+% \newcommand{\highlight}[1]{%
+	%   \begingroup
+	%   \setlength{\fboxsep}{0pt}%
+	%   \colorbox{blue!20}{\reducedstrut#1\/}%
+	%   \endgroup
+	% }
 
-\newcommand{\highlightgray}[1]{%
-  \begingroup
-  \setlength{\fboxsep}{0pt}%
-  \colorbox{black!15}{\reducedstrut#1\/}%
-  \endgroup
-}
+% \newcommand{\highlightgray}[1]{%
+	%   \begingroup
+	%   \setlength{\fboxsep}{0pt}%
+	%   \colorbox{black!15}{\reducedstrut#1\/}%
+	%   \endgroup
+	% }
 
 
 
 
 % custom
-\acrodef{cfg}[CFG]{Control Flow Graph}
-\acrodef{cg}[CG]{Call Graph}
-\acrodef{pdg}[PDG]{Program Dependence Graph}
-\acrodef{ui}[UI]{User Interface}
-\acrodef{gui}[GUI]{Graphical User Interface}
-\acrodef{api}[API]{Application Programming Interface}
-\acrodef{rq}[RQ]{research question}
-
-\acrodef{bua}[BUA]{Bundle Under Analysis}
-\acrodef{ir}[IR]{Intermediate Representation}
-\acrodef{icc}[ICC]{Inter Component Communication}
-
 
 \def\HiLi{\leavevmode\rlap{\hbox to \hsize{\color{yellow!50}\leaders\hrule height .8\baselineskip depth .5ex\hfill}}}
 
-\acrodef{aria}[\texttt{ARIA}]{Accurate Intent Analysis}
 \newcommand{\attr}[1]{\textsc{#1}}
 
 \newcounter{cnt}
 \setcounter{cnt}{0}
 \def\rqseq{\addtocounter{cnt}{1}\arabic{cnt}}
 \newcommand{\RQ}[1]{RQ \rqseq: #1}
-
-\newcommand{\rqa}{How do developers use Android methods for Intent-based \acp{icc}?}
-
-\newcommand{\rqb}{How Intents are constructed?}
-
-\newcommand{\rqc}{How Intents are used?}
-
-% \newcommand{\rqd}{How does the logic of apps impact \ac{icc} related APIs and vice versa?}
-
-% \newcommand{\rqe}{How important is it to compute the content of Intents? }
-
-% \newcommand{\rqf}{How representative are existing benchmarks? }
-
-%Experiment Setup
-\newcommand{\totalbenignapps}{1376}
-\newcommand{\totalmalapps}{745}
-\newcommand{\totaliccmethods}{700}
-\newcommand{\totalapis}{578}
-\newcommand{\totalcallbacks}{122}
-
-%RQ1
-% icc api invocation count
-\newcommand{\totalinvoke}{80,870} % RQ1/overview.csv
-\newcommand{\totalcallback}{3,148} % RQ1/overview.csv
-\newcommand{\maxinvokeapp}{3,576} % max invoke for an app, RQ1/overview.csv
-\newcommand{\totalinvokedapi}{272} % RQ1/invocation_results_with_scenario_distribution.csv
-\newcommand{\onceapp}{60\%} %RQ1/overview.csv
-% icc api callback count
-\newcommand{\callbacktypes}{21} % #callback types RQ1/callback_count.csv
-\newcommand{\callbackcount}{3,184} % # total callback implementation RQ1/callback_count.csv
-\newcommand{\callbackcountperapp}{6} % callback per app RQ1/callback_count.csv
-\newcommand{\topcallbackcount}{1,114} % # onActivityResult RQ1/callback_count.csv
-\newcommand{\topcallbackcountperapp}{2} % 1114/503 per app RQ1/callback_count.csv
-% recheability
-\newcommand{\unreachableinvoke}{8,146} %RQ1/rechability_with_entry_distribution.csv
-\newcommand{\unreachableinvokepec}{10.0\%} %RQ1/unreacheable_invoke_with_entry_dist.csv
-\newcommand{\callbackscenario}{54,154 (67.0\%)} % 54154/80870 RQ1/rechability_with_entry_distribution.csv
-\newcommand{\eventlistenerscenario}{18,570 (23.0\%)} % 18570/80870 RQ1/rechability_with_entry_distribution.csv
-\newcommand{\unreachviewscenario}{71} % unreachable cases in View classes RQ1/rechability_with_entry_distribution.csv
-\newcommand{\unreachdevdefined}{78\%} % unreachable cases in View classes RQ1/rechability_with_entry_distribution.csv
-\newcommand{\maxcallchainlen}{21} % RQ1/all/all_invocations.csv
-\newcommand{\callchainlen}{72.1\%} % 52578/72866 call chain length>1, RQ1/all/all_icc_invocations.csv
-\newcommand{\invokefromfragment}{122} % rechability_with_entry_distribution.csv
-\newcommand{\invokefromcomponent}{45,895} % rechability_with_entry_distribution.csv
-\newcommand{\invokefromview}{2,303} % rechability_with_entry_distribution.csv
-\newcommand{\invokefromapplication}{1,966} % rechability_with_entry_distribution.csv
-\newcommand{\invokefromothercallback}{9,592} % including both reachable and unreachable, invocation_count_per_api_type.csv
-\newcommand{\uncheableconstructingactivating}{7458 (91.6\%)} % 7458/8146 invocation_count_per_api_type.csv
-\newcommand{\invokefromnoncomponent}{27,782 (34.4\%)} % include event listeners
-\newcommand{\invokefromlistener}{19,368}
-\newcommand{\uniquelisteners}{81}
-
-
-%RQ2
-% arg count
-\newcommand{\totalargs}{165,263}  % from RQ2/overview.csv
-\newcommand{\totalarginvoke}{98,132} % from RQ2/overview.csv
-\newcommand{\stringargs}{69,979 (42.3\%)} % RQ2/arg_count_per_argtype_val.csv
-\newcommand{\methodinvokedef}{29,615} % from RQ2/invocation_count_per_argdef_type.csv
-\newcommand{\androidinvokepec}{36.8\%} % from RQ2/invocation_count_per_argdef_type.csv
-\newcommand{\javainvokepec}{17.9\%} % from RQ2/invocation_count_per_argdef_type.csv
-\newcommand{\libinvokepec}{15.3\%} % from RQ2/invocation_count_per_argdef_type.csv
-\newcommand{\devinvokepec}{30.3\%} % from RQ2/invocation_count_per_argdef_type.csv
-\newcommand{\devfieldpec}{94.0\%} % from RQ2/invocation_count_per_argdef_type.csv
-\newcommand{\libfieldpec}{6.0\%} % from RQ2/invocation_count_per_argdef_type.csv
-\newcommand{\fielddef}{17,916} % from RQ2/invocation_count_per_argdef_type.csv
-
-% defs for icc objects
-\newcommand{\intentargs}{15,592} % from RQ2/arg_count_per_apitype_per_argtype_val.csv
-\newcommand{\uriargs}{2,274} % from RQ2/arg_count_per_apitype_per_argtype_val.csv
-\newcommand{\pendingintentargs}{665} % from RQ2/arg_count_per_apitype_per_argtype_val.csv
-\newcommand{\createChooser}{528} % from RQ2/intentconstructor_val.csv
-\newcommand{\getLaunchIntent}{80} % from RQ2/intentconstructor_val.csv
-\newcommand{\getIntent}{32} % from RQ2/intentconstructor_val.csv
-\newcommand{\setattrinvoke}{52,669} % from RQ2/intentconstructor_val.csv
-
-%RQ3
-% \newcommand{\resendintent}{747} % use_type_percentage_for_icc_objects.csv
-\newcommand{\reusediccobj}{1,379} % 747+632 use_type_percentage_for_icc_objects.csv
-\newcommand{\extrafromintent}{566} % iccobjattr_uses_combine_activating_constructing_icc_val.csv
-\newcommand{\objsinui}{1,156} % 1072 views + 61 graphics + 23 dialogs
-\newcommand{\objsindb}{136}
-\newcommand{\objsinlog}{138}
-\newcommand{\objsinweb}{22}
-\newcommand{\objsinview}{1,072}
-
-%RQ4
-\newcommand{\controllingicc}{18,679} % from RQ4/overview.csv
-\newcommand{\controllingloop}{1,276} % from RQ4/overview.csv
-\newcommand{\controlledicc}{55,046} % from RQ4/overview.csv
-\newcommand{\controlledbyloop}{3,151} % from RQ4/overview.csv
-\newcommand{\icccontrolicc}{7,301} % from RQ4/overview.csv
-\newcommand{\maxnestloop}{4} % from RQ4/overview.csv
-\newcommand{\controllingiccapps}{287} % from RQ4/overview.csv
-\newcommand{\controllediccapps}{295} % from RQ4/overview.csv
-\newcommand{\controllingretapi}{11,695 (62.6\%)} % from RQ4/controlling_times_per_api_type.csv
-\newcommand{\avgcontrolledlines}{550} % from RQ4/overview.csv
-\newcommand{\maxcontrolledlines}{10,698} % from RQ4/overview.csv
-\newcommand{\extraactionnullcheckpec}{984 (33.1\%)} % from RQ4/controlling_times_per_api_type.csv
-\newcommand{\extracontrollingtimes}{2,976} % from RQ4/controlling_times_per_api_type.csv
-\newcommand{\actioncontrollingtimes}{2,537} % from RQ4/controlling_times_per_api_type.csv
-\newcommand{\querycontrollinglooptimes}{\placeholder} % from RQ4/controlling_times_per_api_type.csv
-\newcommand{\controlledconstrucingicc}{30,217} % 0.555135705 from RQ4/controlled_times_per_api_type.csv
-\newcommand{\plusonecontrolledconstructing}{19,319 (63.9\%)} % from RQ4/controlled_times_per_api_type.csv
-\newcommand{\controlledactivitingicc}{9,365} % 9517/55046from RQ4/
-\newcommand{\plusonecontrolledactivting}{5,512 (58.9\%)} % from RQ4/
-\newcommand{\retrieveicccontrollui}{942} % 890 for view + 52 for dialog from RQ4/controlling_times_per_api_type.csv
-\newcommand{\reticccontrolacticc}{1,065} % RQ4/double_controlled_times_per_api_type.csv
-\newcommand{\reticccontrolconstructicc}{5,260} % RQ4/double_controlled_times_per_api_type.csv
-\newcommand{\loopusingintent}{333}
-% \newcommand{\prgref}[1]{Program~\ref{prg:#1}}
-
-%chapter 5, security Analysis
-%vulnerabilities
-\acrodef{dl}[DL]{Data Leakage}
-\acrodef{dos}[DoS]{Denial of Service}
-\acrodef{riv}[RIV]{Return Intent Vulnerability}
-\acrodef{niv}[NIV]{Next Intent Vulnerability}
-
-%graphs
-\acrodef{igraph}[iGraph]{Intent Flow Graph}
-\acrodef{ngraph}[NG]{\ac{niv} Graph}
-
-%tools
-\acrodef{naria}[n\ac{aria}]{\ac{niv} Detector}

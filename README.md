@@ -11,6 +11,8 @@ A brief history of LaTeX templates for dissertation and thesis at the University
 - 2001-2003: Brian P. Gerkey (gerkey@robotics.usc.edu) continued the maintenance of `USCthesis.sty`.
 - MISSING_EDIT_HISTORY
 - 2023: Ali S. Alotaibi (aalotaib@usc.edu) cleaned and organized this template
+- 2024: Amer Melebari (amelebar@usc.edu) replaced acronym package with acro package, added list of abbreviations,
+
 
 This repository is based on Gerkey's work and aims at making the updated template easier to find and easier to use.
 

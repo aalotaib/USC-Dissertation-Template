@@ -11,33 +11,8 @@
 %   dissertation/thesis, final/proposal, copyright/nocopyright,
 %   fussy/sloppy, flushbottom/raggedbottom, clref/opref.
 \usepackage[dissertation]{USCthesis}
-
-% Packages required by `USCthesis.sty`.
-\usepackage{hyperref}
-\usepackage{setspace}
-\usepackage{tabularx}
-
-% Line spacing and margins in compliance with USC graduate school guidelines.
-\usepackage[margin=1in,footskip=.5in]{geometry}
-\doublespacing
-
-% % Optional packages: mathematical fonts and symbols
-% % You may comment this section out if you don't need them.
-\usepackage{csquotes}
-\usepackage{mathptmx} % set font to Times Roman
-\usepackage[OT1]{fontenc} % font encoding for xelatex
-\usepackage{mathtools}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{cleveref}
-\usepackage{acronym}
-\usepackage{xcolor}
-\usepackage{enumitem}
-\usepackage{graphicx}
-\usepackage{threeparttable}
-\usepackage{booktabs}
-\usepackage{listings}
-\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+\input{packages}
+\input{acronyms}
 % You can use the "demo" option while editing to avoid compiling figures.
 % \usepackage[demo]{graphicx}
 % You can add absolute paths as well.
@@ -74,9 +49,9 @@
 %-----------------------------------------------------------------------------
 
 % Volume name could be added as option, e.g. `[Volume I]`.
-\title{\Large{Tile}}
+\title{Title} % will be capitilized
 
-\author{first name Last name}
+\author{First name Last name}
 
 % Committee list is only shown in `proposal` layout.
 \committee{A.~Adams & (Chair)\\*
@@ -86,11 +61,13 @@
            E.~Emory & (Outside Member)}
 
 % Submission information is only shown in `final` layout.
-\majorfield{COMPUTER SCIENCE}
-\submitdate{May 2023}  % Must be one of the three dates allowed in the guideline
+\majorfield{Computer Science}  % will be capitilized
+\submitdate{May 2024}  % Must be one of the three dates allowed in the guideline (December or May or August)
+
+\copyrightyear{2024} % Set year, comment this to use current year
 
 % Make sure everything, specially your title page, exactly follows the guideline:
-% https://graduateschool.usc.edu/wp-content/themes/fictional-university-theme/assets/doc/Manuscript_Formatting_and_Documentation_Styles.pdf
+% https://graduateschool.usc.edu/current-students/thesis-dissertation-submission/manuscript-formatting-guidelines/
 
 %-----------------------------------------------------------------------------
 %	PREFACE
@@ -111,10 +88,14 @@
   \listoftables   % Comment this out if you don't have tables
   \listoffigures
 
+  % List of abbreviations
+  \printacronyms[heading={chapter*},name={Abbreviations}] % Comment this line if you don't want the list of abbreviations
+
   % Abstract Page
   \prefacesection{Abstract}
   \input{abstract}
 \end{preface}
+\acresetall  % reset acronyms
 
 %-----------------------------------------------------------------------------
 %	CONTENT STRUCTURE

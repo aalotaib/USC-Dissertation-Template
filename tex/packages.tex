@@ -1,33 +1,45 @@
-\let\labelindent\relax
-
-
-\usepackage{xspace}
-\usepackage{multirow}
-\usepackage{balance}
-\usepackage{ctable}
-
-\usepackage{color}
-\usepackage{graphicx}
-\usepackage{subcaption}
-\usepackage{url}
+% Packages required by `USCthesis.sty`.
 \usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{tabularx}
 
-\usepackage{algorithm}
-\usepackage{algorithmicx}
-\usepackage{algpseudocode}
+% Line spacing and margins in compliance with USC graduate school guidelines.
+\usepackage[margin=1in,footskip=.5in]{geometry}
+\doublespacing
 
-\usepackage{amssymb}
+% % Optional packages: mathematical fonts and symbols
+% % You may comment this section out if you don't need them.
+\usepackage{csquotes}
+\usepackage{mathptmx} % set font to Times Roman
+\usepackage[OT1]{fontenc} % font encoding for xelatex
+\usepackage{mathtools}
 \usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{newfloat}
-
-\usepackage[font={footnotesize}]{caption}
-
+\usepackage{amssymb}
 \usepackage{cleveref}
-\usepackage{acronym}
-\usepackage{fancybox}
-\usepackage{cite}
-\usepackage[inline]{enumitem}
+%\usepackage{acronym} % you need to remove acro before using this package
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{graphicx}
 \usepackage{threeparttable}
+\usepackage{booktabs}
 \usepackage{listings}
-\usepackage{soul}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+\usepackage{siunitx}
+\usepackage[shortcuts]{extdash}
+\usepackage{acro}
+\usepackage{url}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{upgreek}
+\usepackage[figurewithin=section]{caption}
+\usepackage[labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{\alph{subfigure}}
+\DeclareCaptionLabelFormat{subcaptionlabel}{\normalfont(\textbf{#2}\normalfont)}
+\captionsetup[subfigure]{labelformat=subcaptionlabel}
+\usepackage[percent]{overpic}
+\usepackage{multirow}
+\sisetup{
+    list-final-separator={, and }, 
+    list-pair-separator={ and },
+    group-separator = {,},
+    range-units = single,}

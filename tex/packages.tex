@@ -31,11 +31,16 @@
 \usepackage{amsfonts}
 \usepackage{bm}
 \usepackage{upgreek}
-\usepackage[figurewithin=section]{caption}
-\usepackage[labelformat=simple]{subcaption}
+
+% Setup Figures and subfigures numbering and referencing 
+\usepackage[figurewithin=chapter,tablewithin=chapter]{caption}
+\usepackage[subrefformat=parens]{subcaption}
 \renewcommand\thesubfigure{\alph{subfigure}}
-\DeclareCaptionLabelFormat{subcaptionlabel}{\normalfont(\textbf{#2}\normalfont)}
+\DeclareCaptionLabelFormat{subcaptionlabel}{\normalfont\textbf{#2}\normalfont} % Removes parentheses in subfigure captions
 \captionsetup[subfigure]{labelformat=subcaptionlabel}
+\labelformat{subfigure}{\thefigure\nobreak\hspace{.16667em}#1}
+\renewcommand\thesubfigure{(\normalfont\alph{subfigure})\normalfont} 
+
 \usepackage[percent]{overpic}
 \usepackage{multirow}
 \sisetup{
@@ -43,3 +48,5 @@
     list-pair-separator={ and },
     group-separator = {,},
     range-units = single,}
+\usepackage{pdflscape} % For proper landscape in PDFs
+\pdfminorversion=7

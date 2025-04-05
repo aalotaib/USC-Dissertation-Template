@@ -94,6 +94,7 @@
   \printacronyms[heading=none] 
 
   % Abstract Page
+  \acresetall  % reset acronyms
   \prefacesection{Abstract}
   \input{abstract}
 \end{preface}
@@ -132,10 +133,14 @@
 \addcontentsline{toc}{chapter}{Appendices}%
 \markboth{Appendices}{Appendices}%
 \chapter*{Appendices}
+\setcounter{chapter}{\value{chapter}+1}  % Manually increment chapter counter
+\setcounter{section}{0}  % Reset section counter
 \renewcommand\thesection{\Alph{section}}
 \renewcommand*{\thesubsection}{\Alph{section}.\arabic{subsection}}
-\begingroup
 \numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\begingroup
 % Appendix source files
 \input{appendix_proof}
 \endgroup

@@ -1,5 +1,5 @@
 % Packages required by `USCthesis.sty`.
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{setspace}
 \usepackage{tabularx}
 
@@ -17,7 +17,7 @@
 \usepackage{amssymb}
 \usepackage{cleveref}
 %\usepackage{acronym} % you need to remove acro before using this package
-\usepackage{xcolor}
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{threeparttable}
@@ -41,12 +41,23 @@
 \labelformat{subfigure}{\thefigure\nobreak\hspace{.16667em}#1}
 \renewcommand\thesubfigure{(\normalfont\alph{subfigure})\normalfont} 
 
+% Setup Figures and subfigures numbering and referencing 
+\usepackage[figurewithin=chapter,tablewithin=chapter]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\renewcommand\thesubfigure{\alph{subfigure}}
+\DeclareCaptionLabelFormat{subcaptionlabel}{\normalfont\textbf{#2}\normalfont} % Removes parentheses in subfigure captions
+\captionsetup[subfigure]{labelformat=subcaptionlabel}
+\labelformat{subfigure}{\thefigure\nobreak\hspace{.16667em}#1}
+\renewcommand\thesubfigure{(\normalfont\alph{subfigure})\normalfont} 
+
 \usepackage[percent]{overpic}
+\usepackage{tikz}
 \usepackage{multirow}
 \sisetup{
-    list-final-separator={, and }, 
-    list-pair-separator={ and },
-    group-separator = {,},
-    range-units = single,}
-\usepackage{pdflscape} % For proper landscape in PDFs
+	list-final-separator={, and }, 
+	list-pair-separator={ and },
+	group-separator = {,},
+	range-units = single,
+	list-units = single}
+
 \pdfminorversion=7

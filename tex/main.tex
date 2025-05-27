@@ -12,7 +12,8 @@
 %   fussy/sloppy, flushbottom/raggedbottom, clref/opref.
 \usepackage[dissertation]{USCthesis}
 \input{packages}
-\input{acronyms}
+\input{acronyms}  % adding acronyms, comment this if you don't use it
+
 % You can use the "demo" option while editing to avoid compiling figures.
 % \usepackage[demo]{graphicx}
 % You can add absolute paths as well.
@@ -29,7 +30,8 @@
     eprint=false,
     date=year,
     maxnames=6,
-    minnames=6
+    minnames=6,    
+    backend=biber
 ]{biblatex}
 \AtEveryBibitem{\clearfield{eventtitle}} 
 \AtEveryCitekey{\clearfield{eventtitle}}
@@ -89,16 +91,19 @@
   \listoffigures
 
   % List of abbreviations
-  % Comment the following 2 lines if you don't want the list of abbreviations
+  % Comment the following 4 lines if you don't want the list of abbreviations
   \prefacesection{Abbreviations}
-  \printacronyms[heading=none] 
+	\begin{singlespace}
+	\printacronyms[heading=none] 
+	\end{singlespace}
+
 
   % Abstract Page
-  \acresetall  % reset acronyms
+  \acresetall  % reset acronyms, comment this if you're not using acro package
   \prefacesection{Abstract}
   \input{abstract}
 \end{preface}
-\acresetall  % reset acronyms
+  \acresetall  % reset acronyms, comment this if you're not using acro package
 
 %-----------------------------------------------------------------------------
 %	CONTENT STRUCTURE
@@ -115,8 +120,6 @@
 
 \include{Conclusion}
 
-% Using single-space for reference list.
-\begin{singlespace}
 % Bibliography
 \phantomsection
 \addcontentsline{toc}{chapter}{References}%
@@ -126,20 +129,9 @@
 % If you use BibTeX
 % \bibliographystyle{plain}
 % \bibliography{references}
-\end{singlespace}
 
 % Appendices
-\phantomsection
-\addcontentsline{toc}{chapter}{Appendices}%
-\markboth{Appendices}{Appendices}%
-\chapter*{Appendices}
-\setcounter{chapter}{\value{chapter}+1}  % Manually increment chapter counter
-\setcounter{section}{0}  % Reset section counter
-\renewcommand\thesection{\Alph{section}}
-\renewcommand*{\thesubsection}{\Alph{section}.\arabic{subsection}}
-\numberwithin{equation}{section}
-\numberwithin{figure}{section}
-\numberwithin{table}{section}
+\appendicesSetup  % comment this if you do not have appendices
 \begingroup
 % Appendix source files
 \input{appendix_proof}

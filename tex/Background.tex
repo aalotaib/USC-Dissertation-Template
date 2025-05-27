@@ -1,3 +1,26 @@
 \chapter{Background}
 \label{cha:background}
 Your Background goes here
+
+\Ac{USC} is located in Los Angeles. Table~\ref{tab:table1} shows an example of a landscape table. 
+
+
+\begin{table}[p] % Put on a page by itself
+	\centering
+	\rotatebox{-90}{ % -90 = clockwise
+	\begin{minipage}{\textheight} % Width of rotated table (now height of page)
+	\centering
+	\caption{Example of Landscape Table}
+	\label{tab:table1}
+    \begin{tabular}{|c|c|c|c|}
+	\hline
+	Header 1 & Header 2 & Header 3 & Header 4 \\
+	\hline
+	Row 1 & Data & Data & Data \\
+	Row 2 & Data & Data & Data \\
+	\hline
+	\end{tabular}
+
+	\end{minipage}
+	}
+\end{table}
